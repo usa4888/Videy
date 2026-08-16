@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+    <style>
+        body { background-color: #111; color: #fff; font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 20px; }
+        .video-container { position: relative; max-width: 600px; margin: auto; background: #000; border-radius: 8px; overflow: hidden; }
+        video { width: 100%; display: block; }
+        .play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: red; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; }
+        .play-triangle { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid white; margin-left: 5px; }
+        .button-group { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
+        .action-btn { padding: 12px 24px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; color: white; }
+        .download-btn { background-color: #28a745; }
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        <!-- Lal Play Button -->
+        <div class="play-button" id="customPlayBtn">
+            <div class="play-triangle"></div>
+        </div>
+
+        <!-- Video Player -->
+        <video id="myVideo">
+            <source src="IFlt0Wbh1.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-group">
+        <button class="action-btn download-btn" id="downloadBtn">📥 Download</button>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const playButton = document.getElementById('customPlayBtn');
+        const video = document.getElementById('myVideo');
+        const downloadButton = document.getElementById('downloadBtn');
+
+        // Aapka Monetag Direct Link
+        const monetagDirectLink = "https://propeorane.com";
+
+        playButton.addEventListener('click', function() {
+            window.open(monetagDirectLink, '_blank');
+            video.play();
+            playButton.style.display = 'none';
+            video.setAttribute('controls', 'controls');
+        });
+
+        downloadButton.addEventListener('click', function() {
+            window.open(monetagDirectLink, '_blank');
+        });
+    </script>
+</body>
+  </html>
